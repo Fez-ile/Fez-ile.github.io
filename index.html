@@ -4,6 +4,9 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Fezile Amanda Mkhonza - Portfolio</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;600&family=Playfair+Display:wght@400;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="styles.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
 </head>
@@ -12,6 +15,7 @@
     <nav class="navbar">
         <div class="nav-container">
             <div class="logo">FAM</div>
+            <button class="menu-btn" aria-expanded="false">Menu <i class="fas fa-chevron-down"></i></button>
             <ul class="nav-menu">
                 <li><a href="#home" class="nav-link">Home</a></li>
                 <li><a href="#about" class="nav-link">About</a></li>
@@ -39,10 +43,10 @@
                 <img src="profile.jpg" alt="Fezile Amanda Mkhonza" class="profile-pic">
             </div>
             <h1 class="hero-title">Fezile Amanda Mkhonza</h1>
-            <p class="hero-subtitle">Systems Development Graduate | Junior Web Developer | Building Clean & Responsive Web Applications</p>
+            <p class="hero-subtitle">Systems Development Graduate · Junior Web Developer · Clean, editorial web experiences</p>
             <div class="hero-cta">
-                <a href="#projects" class="btn btn-primary">View Projects</a>
-                <a href="CV.pdf" download class="btn btn-secondary">Download CV</a>
+                <a href="#projects" class="btn btn-ghost">View Projects</a>
+                <a href="CV.pdf" download class="btn btn-ghost">Download CV</a>
             </div>
         </div>
     </section>
@@ -334,56 +338,46 @@
     <!-- Projects Section -->
     <section id="projects" class="projects">
         <div class="container">
-            <h2 class="section-title">Projects</h2>
+            <h2 class="section-title">Selected Projects</h2>
             <div class="projects-grid">
-                <div class="project-card">
-                    <div class="project-header">
+                <article class="project-card">
+                    <div class="project-media">
+                        <img src="projects/project-portfolio.jpg" alt="Portfolio project screenshot">
+                    </div>
+                    <div class="project-overlay">
                         <h3>Portfolio Website</h3>
-                        <a href="https://github.com/Fez-ile" target="_blank" class="github-icon" title="GitHub">
-                            <i class="fab fa-github"></i>
-                        </a>
+                        <p class="meta"><strong>Problem:</strong> Present a professional showcase with clear hierarchy.</p>
+                        <p class="meta"><strong>Solution:</strong> Minimal editorial layout, responsive images, interactive certificate viewer.</p>
+                        <p class="tech">HTML · CSS · JavaScript · PHP</p>
+                        <a class="project-link" href="https://github.com/Fez-ile" target="_blank" aria-label="Portfolio GitHub"><i class="fab fa-github"></i></a>
                     </div>
-                    <p class="project-desc">A professional portfolio website built with HTML, CSS, and JavaScript featuring responsive design, interactive certificate viewer, and contact form with email notifications.</p>
-                    <div class="project-tools">
-                        <span class="tool-tag">HTML</span>
-                        <span class="tool-tag">CSS</span>
-                        <span class="tool-tag">JavaScript</span>
-                        <span class="tool-tag">PHP</span>
-                    </div>
-                </div>
+                </article>
 
-                <div class="project-card">
-                    <div class="project-header">
+                <article class="project-card">
+                    <div class="project-media">
+                        <img src="projects/project-tracker.jpg" alt="Runner's progress tracker screenshot">
+                    </div>
+                    <div class="project-overlay">
                         <h3>Runner's Progress Tracker</h3>
-                        <a href="https://github.com/Fez-ile" target="_blank" class="github-icon" title="GitHub">
-                            <i class="fab fa-github"></i>
-                        </a>
+                        <p class="meta"><strong>Problem:</strong> Real-time pacing feedback for runners.</p>
+                        <p class="meta"><strong>Solution:</strong> Lightweight web app with pacing calculations and history.</p>
+                        <p class="tech">HTML · CSS · JavaScript</p>
+                        <a class="project-link" href="https://github.com/Fez-ile" target="_blank" aria-label="Tracker GitHub"><i class="fab fa-github"></i></a>
                     </div>
-                    <p class="project-desc">Runner's Progress Tracker is a web application that helps marathon runners monitor their race progress in real time. Enter your total race distance, distance covered, elapsed time, and target finish time to calculate current average speed, required speed to meet your target, remaining distance and time, and get instant feedback. Tracks race history for training and race-day use.</p>
-                    <div class="project-tools">
-                        <span class="tool-tag">HTML</span>
-                        <span class="tool-tag">CSS</span>
-                        <span class="tool-tag">JavaScript</span>
-                    </div>
-                </div>
+                </article>
 
-                <div class="project-card">
-                    <div class="project-header">
-                        <h3>Vitalize – Gymnastics Management System</h3>
-                        <a href="https://github.com/Fez-ile" target="_blank" class="github-icon" title="GitHub">
-                            <i class="fab fa-github"></i>
-                        </a>
+                <article class="project-card">
+                    <div class="project-media">
+                        <img src="projects/project-vitalize.jpg" alt="Vitalize system screenshot">
                     </div>
-                    <p class="project-desc">The Vitalize Gymnastics Management System is a PHP/MySQL web application built for managing gymnastics programs, enrolments, attendance and progress tracking. Developed as an academic project, it demonstrates CRUD operations, database integration and progress reporting for coaches and gymnasts.</p>
-                    <p class="project-features"><strong>Features:</strong> Program management, gymnast enrolment, attendance & progress tracking, progress notes and structured tables for programs.</p>
-                    <div class="project-tools">
-                        <span class="tool-tag">PHP</span>
-                        <span class="tool-tag">MySQL</span>
-                        <span class="tool-tag">HTML</span>
-                        <span class="tool-tag">CSS</span>
-                        <span class="tool-tag">JavaScript</span>
+                    <div class="project-overlay">
+                        <h3>Vitalize – Gymnastics System</h3>
+                        <p class="meta"><strong>Problem:</strong> Manage enrolments, attendance and progress.</p>
+                        <p class="meta"><strong>Solution:</strong> PHP/MySQL web app with CRUD and reporting features.</p>
+                        <p class="tech">PHP · MySQL · HTML · CSS</p>
+                        <a class="project-link" href="https://github.com/Fez-ile" target="_blank" aria-label="Vitalize GitHub"><i class="fab fa-github"></i></a>
                     </div>
-                </div>
+                </article>
             </div>
         </div>
     </section>
@@ -548,22 +542,7 @@
                     </div>
                 </div>
 
-                <form class="contact-form" id="contactForm">
-                    <div class="form-group">
-                        <input type="text" name="name" placeholder="Your Name" required>
-                    </div>
-                    <div class="form-group">
-                        <input type="email" name="email" placeholder="Your Email" required>
-                    </div>
-                    <div class="form-group">
-                        <input type="text" name="subject" placeholder="Subject">
-                    </div>
-                    <div class="form-group">
-                        <textarea name="message" placeholder="Your Message" rows="5" required></textarea>
-                    </div>
-                    <button type="submit" class="btn btn-primary">Send Message</button>
-                    <div id="formMessage" class="form-message"></div>
-                </form>
+              
             </div>
         </div>
     </section>
