@@ -4,16 +4,33 @@
 const hamburger = document.querySelector('.hamburger');
 const navMenu = document.querySelector('.nav-menu');
 const navLinks = document.querySelectorAll('.nav-link');
+const menuBtn = document.querySelector('.menu-btn');
 
 // Toggle menu
 hamburger.addEventListener('click', () => {
-    navMenu.style.display = navMenu.style.display === 'flex' ? 'none' : 'flex';
+    navMenu.classList.toggle('open');
+    hamburger.classList.toggle('open');
 });
+
+// Toggle dropdown when top Menu button is clicked
+if (menuBtn) {
+    menuBtn.addEventListener('click', (e) => {
+        const expanded = menuBtn.getAttribute('aria-expanded') === 'true';
+        menuBtn.setAttribute('aria-expanded', String(!expanded));
+
+        // toggle dropdown presentation
+        navMenu.classList.toggle('dropdown');
+        navMenu.classList.toggle('show');
+    });
+}
 
 // Close menu when link is clicked
 navLinks.forEach(link => {
     link.addEventListener('click', () => {
-        navMenu.style.display = 'none';
+        navMenu.classList.remove('open');
+        navMenu.classList.remove('dropdown');
+        navMenu.classList.remove('show');
+        if (menuBtn) menuBtn.setAttribute('aria-expanded', 'false');
     });
 });
 
@@ -34,78 +51,7 @@ document.querySelectorAll('a[href^="#"]').forEach(anchor => {
 });
 
 // ==========================================
-// FORM HANDLING
-// ==========================================
-const contactForm = document.getElementById('contactForm');
-const formMessage = document.getElementById('formMessage');
-
-if (contactForm) {
-    contactForm.addEventListener('submit', function(e) {
-        e.preventDefault();
-        
-        // Get form values
-        const formData = new FormData(this);
-        const name = formData.get('name');
-        const email = formData.get('email');
-        const subject = formData.get('subject');
-        const message = formData.get('message');
-        
-        // Basic validation
-        if (name.trim() === '' || email.trim() === '' || message.trim() === '') {
-            showFormMessage('Please fill in all required fields', 'error');
-            return;
-        }
-        
-        // Email validation
-        const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
-        if (!emailRegex.test(email)) {
-            showFormMessage('Please enter a valid email address', 'error');
-            return;
-        }
-        
-        // Send form data to backend
-        const data = {
-            name: name,
-            email: email,
-            subject: subject,
-            message: message,
-            date: new Date().toISOString()
-        };
-        
-        fetch('send-message.php', {
-            method: 'POST',
-            headers: {
-                'Content-Type': 'application/json'
-            },
-            body: JSON.stringify(data)
-        })
-        .then(response => response.json())
-        .then(result => {
-            if (result.success) {
-                showFormMessage(`Thank you, ${name}! Your message has been received. I'll get back to you soon.`, 'success');
-                contactForm.reset();
-            } else {
-                showFormMessage('Error: ' + (result.message || 'Failed to send message'), 'error');
-            }
-        })
-        .catch(error => {
-            console.error('Error:', error);
-            showFormMessage('Error sending message. Please try again later.', 'error');
-        });
-    });
-}
-
-function showFormMessage(message, type) {
-    formMessage.textContent = message;
-    formMessage.className = 'form-message ' + type;
-    
-    // Auto hide success message after 5 seconds
-    if (type === 'success') {
-        setTimeout(() => {
-            formMessage.className = 'form-message';
-        }, 5000);
-    }
-}
+// (Contact form removed) The site now uses direct email / social links.
 
 // ==========================================
 // SCROLL ANIMATIONS
