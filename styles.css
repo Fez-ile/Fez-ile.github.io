@@ -797,31 +797,44 @@ section {
 
 .project-overlay .tech {
     margin-top: 8px;
+    margin-bottom: 1rem;
     color: var(--text-muted);
     font-size: 0.9rem;
 }
 
-.project-link {
-    position: absolute;
-    top: 16px;
-    right: 16px;
-    background: rgba(255,255,255,0.9);
-    color: var(--primary-color);
-    width: 40px;
-    height: 40px;
+.project-actions {
     display: flex;
+    flex-wrap: wrap;
+    gap: 0.75rem;
+    margin-top: auto;
+    padding-top: 0.5rem;
+}
+
+.project-link {
+    display: inline-flex;
     align-items: center;
-    justify-content: center;
+    gap: 0.4rem;
+    padding: 8px 14px;
+    background: var(--light-bg);
+    color: var(--primary-color);
     border-radius: 6px;
     text-decoration: none;
-    transition: background 0.25s ease, transform 0.2s ease;
-    box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+    font-size: 0.9rem;
+    font-weight: 600;
+    transition: background 0.25s ease, color 0.25s ease, transform 0.2s ease;
+    border: 1px solid var(--border-color);
 }
 
 .project-link:hover {
     background: var(--accent-gold);
     color: var(--white);
-    transform: translateY(-3px);
+    border-color: var(--accent-gold);
+    transform: translateY(-2px);
+}
+
+.project-link-demo i,
+.project-link-github i {
+    font-size: 0.85em;
 }
 
 .contact {
