@@ -38,7 +38,7 @@ This is not just a static site — it includes multiple interactive and dynamic 
 
 ---
 
-## 🛠️ Tech Stack
+##  Tech Stack
 
 ### Frontend
 
