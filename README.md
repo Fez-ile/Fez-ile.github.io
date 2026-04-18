@@ -19,7 +19,7 @@ The application is designed with a strong focus on:
 
 ##  Key Technical Highlights
 
-This is not just a static site — it includes multiple interactive and dynamic features:
+This is not just a static site, it includes multiple interactive and dynamic features:
 
 ###  Frontend Interactivity
 
